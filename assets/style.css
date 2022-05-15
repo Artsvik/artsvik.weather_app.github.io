@@ -1,0 +1,229 @@
+:root {
+    --coral: #EE4D47;
+    --text: #402B2B;
+    --textmenu: #FFFFFF;
+    --shadow: #FDE1E1;
+    --menusize: 16px;
+    --captor: 24px;
+    --h2: 48px;
+    --textsize: 18px;
+    --fontbold: bold;
+    --radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: fredoko;
+    src: url(../assets/fonts/fredoka/FredokaOne-Regular.ttf);
+}
+
+.container {
+    background: linear-gradient(rgb(227, 238, 243), rgb(160, 213, 214), rgb(117, 151, 187));
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: fredoko;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    border-radius: 120px;
+    padding: 20px 35px;
+    margin: auto;
+    font-size: 35px;
+    color: rgb(28, 76, 108);
+    text-shadow:
+        0px 1px 1px rgb(85, 142, 181),
+        2px 1px 0px rgb(73, 127, 162),
+        2px 3px 2px rgb(101, 147, 177),
+        2px 1px 1px rgb(89, 122, 144),
+        2px 3px 2px rgb(86, 125, 151),
+        4px 5px 4px rgb(82, 117, 139),
+        5px 6px 7px rgb(62, 99, 123);
+    border: 1px solid transparent;
+    box-shadow:
+        5px 6px 7px rgb(85, 142, 181),
+        6px 7px 10px rgb(73, 127, 162),
+        8px 8px 12px rgb(101, 147, 177),
+        12px 10px 13px rgb(89, 122, 144),
+        12px 13px 12px rgb(86, 125, 151),
+        14px 15px 15px rgb(82, 117, 139),
+        16px 17px 20px rgb(62, 99, 123);
+    ;
+}
+
+.navbar h2:hover {
+    color: rgb(46, 118, 166);
+    font-size: 55px;
+}
+
+.navbar a {
+    margin-left: 50px;
+    color: rgb(28, 76, 108);
+    font-size: 80px;
+}
+
+.navbar a:hover {
+    color: rgb(46, 118, 166);
+    font-size: 85px;
+}
+
+.navbar img {
+    max-width: 15%;
+    margin-left: 40px;
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 50px 60px 100px 60px;
+    background: #eaeaea;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(rgba(227, 238, 243, 0.6), rgba(160, 213, 214, 0.6), rgba(117, 151, 187, 0.6));
+    box-shadow:
+        5px 6px 7px rgb(85, 142, 181),
+        6px 7px 10px rgb(73, 127, 162),
+        8px 8px 12px rgb(101, 147, 177),
+        12px 10px 13px rgb(89, 122, 144),
+        12px 13px 12px rgb(86, 125, 151),
+        14px 15px 15px rgb(82, 117, 139),
+        16px 17px 20px rgb(62, 99, 123);
+    ;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search_bar {
+    width: 200px;
+    padding: 20px 30px;
+    color: rgb(27, 71, 101);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: transparent;
+    border-radius: 30px;
+    outline: none;
+    -webkit-text-fill-color: rgba(28, 76, 108, 0.4);
+    background: rgb(200, 217, 234);
+}
+
+/* DOESN't WORK*/
+#search_bar:focus {
+    width: 350px;
+    border: 2px solid rgb(28, 76, 108);
+    box-shadow:
+        1px 1px 1px rgb(28, 76, 108),
+        2px 3px 2px rgb(82, 117, 139),
+        3px 4px 3px rgb(62, 99, 123);
+}
+
+/* Button's background*/
+/* .card button {
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    font-size: 25px;
+    color: rgb(27, 71, 101);
+    border: 0
+} */
+
+
+/* !!! button-ը clickable չի !!!*/
+.search button {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.search button i {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(27, 71, 101);
+    border-radius: 50%;
+    background: linear-gradient(rgba(227, 238, 243, 0.6), rgba(160, 213, 214, 0.6), rgba(117, 151, 187, 0.6));
+    text-shadow:
+        0px 1px 1px rgb(85, 142, 181),
+        2px 1px 0px rgb(73, 127, 162),
+        2px 3px 2px rgb(101, 147, 177),
+        2px 1px 1px rgb(89, 122, 144);
+}
+
+.weather_part {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.city {
+    margin-top: 10px;
+    font-size: 30px;
+    color: rgb(27, 71, 101);
+}
+
+.temp {
+    font-size: 70px;
+    margin: 20px;
+    color: rgb(46, 118, 166)
+}
+
+.temp:hover {
+    color: rgb(28, 76, 108);
+}
+
+.humidity {
+    font-size: 20px;
+    color: rgb(27, 71, 101);
+    margin: 20px;
+}
+
+.wind {
+    font-size: 20px;
+    color: rgb(27, 71, 101);
+    margin: 20px;
+}
+
+.right_view {
+    width: 50%;
+    max-width: 300px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view {
+    width: 90%;
+    max-width: 200px;
+    height: 70%;
+}
+
+.description {
+    width: 90%;
+    max-width: 200px;
+    font-size: 27px;
+    text-align: center;
+    color: rgb(17, 66, 98);
+}
