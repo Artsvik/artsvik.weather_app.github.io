@@ -22,27 +22,31 @@
     src: url(../assets/fonts/fredoka/FredokaOne-Regular.ttf);
 }
 
+/* PROBLEM with HEIGHT*/
 .container {
-    background: linear-gradient(rgb(227, 238, 243), rgb(160, 213, 214), rgb(117, 151, 187));
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    background-image: url(../assets/images/back.png);
     margin: 0;
     font-family: fredoko;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
+    justify-content: center;*/
+}
+
+header {
+    max-width: 60%;
+    margin: auto;
 }
 
 .navbar {
-    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
-    border-radius: 120px;
-    padding: 20px 35px;
-    margin: auto;
-    font-size: 35px;
+    /*border-radius: 120px;*/
+    padding: 10px 35px;
+    margin-bottom: 20px;
+    font-size: 27px;
     color: rgb(28, 76, 108);
     text-shadow:
         0px 1px 1px rgb(85, 142, 181),
@@ -52,8 +56,7 @@
         2px 3px 2px rgb(86, 125, 151),
         4px 5px 4px rgb(82, 117, 139),
         5px 6px 7px rgb(62, 99, 123);
-    border: 1px solid transparent;
-    box-shadow:
+    /* box-shadow:
         5px 6px 7px rgb(85, 142, 181),
         6px 7px 10px rgb(73, 127, 162),
         8px 8px 12px rgb(101, 147, 177),
@@ -61,35 +64,23 @@
         12px 13px 12px rgb(86, 125, 151),
         14px 15px 15px rgb(82, 117, 139),
         16px 17px 20px rgb(62, 99, 123);
-    ;
+    ;*/
 }
 
 .navbar h2:hover {
     color: rgb(46, 118, 166);
-    font-size: 55px;
-}
-
-.navbar a {
-    margin-left: 50px;
-    color: rgb(28, 76, 108);
-    font-size: 80px;
-}
-
-.navbar a:hover {
-    color: rgb(46, 118, 166);
-    font-size: 85px;
+    font-size: 45px;
 }
 
 .navbar img {
     max-width: 15%;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .card {
-    width: 100%;
-    max-width: 600px;
+    max-width: 38%;
     margin: auto;
-    padding: 50px 60px 100px 60px;
+    padding: 40px 60px;
     background: #eaeaea;
     border: 1px solid transparent;
     border-radius: 50px;
@@ -112,7 +103,7 @@
 }
 
 #search_bar {
-    width: 200px;
+    max-width: 77%;
     padding: 20px 30px;
     color: rgb(27, 71, 101);
     font-size: 20px;
@@ -125,7 +116,7 @@
     background: rgb(200, 217, 234);
 }
 
-/* DOESN't WORK*/
+/*
 #search_bar:focus {
     width: 350px;
     border: 2px solid rgb(28, 76, 108);
@@ -134,23 +125,12 @@
         2px 3px 2px rgb(82, 117, 139),
         3px 4px 3px rgb(62, 99, 123);
 }
+*/
 
-/* Button's background*/
-/* .card button {
-    width: 70px;
-    height: 70px;
-    margin: 15px;
-    font-size: 25px;
-    color: rgb(27, 71, 101);
-    border: 0
-} */
-
-
-/* !!! button-ը clickable չի !!!*/
 .search button {
     border: 1px solid transparent;
     border-radius: 50%;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .search button i {
@@ -172,19 +152,30 @@
 
 .weather_part {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20px;
+}
+
+.weather {
+    width: 60%;
+    margin-top: 50px;
 }
 
 .city {
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 32px;
     color: rgb(27, 71, 101);
 }
 
+.country {
+    margin-top: 10px;
+    font-size: 32px;
+    color: rgb(24, 63, 90);
+}
+
 .temp {
-    font-size: 70px;
-    margin: 20px;
+    font-size: 60px;
+    margin: 40px 0px;
     color: rgb(46, 118, 166)
 }
 
@@ -205,19 +196,17 @@
 }
 
 .right_view {
-    width: 50%;
+    width: 40%;
     max-width: 300px;
-    border: 1px solid;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 }
 
-.view {
-    width: 90%;
-    max-width: 200px;
-    height: 70%;
+.icon {
+    max-width: 100%;
+    width: 80%;
 }
 
 .description {
@@ -226,4 +215,304 @@
     font-size: 27px;
     text-align: center;
     color: rgb(17, 66, 98);
+    text-transform: capitalize;
+}
+
+@media (max-width:1240px) {
+    .city {
+        font-size: 25px;
+    }
+
+    .country {
+        font-size: 28px;
+    }
+
+    .temp {
+        font-size: 50px;
+    }
+
+    .humidity {
+        font-size: 18px;
+    }
+
+    .wind {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:1100px) {
+    .card {
+        max-width: 40%;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width:995px) {
+    .navbar {
+        font-size: 22px;
+    }
+
+    .navbar img {
+        max-width: 15%;
+        margin-left: 30px;
+    }
+
+    .card {
+        max-width: 40%;
+        padding: 18px 25px;
+    }
+
+    #search_bar {
+        max-width: 70%;
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    .search button i {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .city {
+        font-size: 24px;
+    }
+
+    .country {
+        font-size: 24px;
+    }
+
+    .temp {
+        font-size: 35px;
+    }
+
+    .humidity {
+        font-size: 17px;
+    }
+
+    .wind {
+        font-size: 17px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        font-size: 18px;
+    }
+
+    .card {
+        max-width: 46%;
+        padding: 18px 25px;
+    }
+}
+
+@media (max-width: 612px) {
+    .navbar {
+        font-size: 15px;
+    }
+
+    .card {
+        max-width: 50%;
+        padding: 18px 25px;
+    }
+
+    .city {
+        font-size: 20px;
+    }
+
+    .country {
+        font-size: 20px;
+    }
+
+    .temp {
+        font-size: 30px;
+    }
+
+    .humidity {
+        font-size: 14px;
+    }
+
+    .wind {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 505px) {
+    .navbar {
+        font-size: 13px;
+    }
+
+    #search_bar {
+        max-width: 60%;
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    .search button {
+        border: 1px solid transparent;
+        border-radius: 50%;
+        margin-left: 15px;
+    }
+
+    .search button i {
+        width: 45px;
+        height: 45px;
+        font-size: 23px;
+    }
+
+    .card {
+        max-width: 53%;
+        padding: 18px 25px;
+    }
+}
+
+@media (max-width: 477px) {
+    .navbar {
+        font-size: 11px;
+    }
+
+    .navbar img {
+        max-width: 15%;
+        margin-left: 20px;
+    }
+
+    #search_bar {
+        max-width: 52%;
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+
+    .weather {
+        margin-top: 10px;
+    }
+
+    .city {
+        font-size: 15px;
+    }
+
+    .country {
+        font-size: 15px;
+    }
+
+    .temp {
+        font-size: 25px;
+    }
+
+    .humidity {
+        font-size: 10px;
+    }
+
+    .wind {
+        font-size: 10px;
+    }
+
+    .description {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 389px) {
+    .navbar img {
+        max-width: 15%;
+        margin-left: 10px;
+    }
+
+    .card {
+        max-width: 57%;
+        padding: 18px 25px;
+    }
+}
+
+@media (max-width: 369px) {
+    .navbar {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 348px) {
+    .navbar {
+        font-size: 9px;
+    }
+
+    .card {
+        max-width: 59%;
+        padding: 18px 25px;
+    }
+}
+
+@media (max-width: 327px) {
+    .navbar {
+        font-size: 8px;
+    }
+
+    .city {
+        font-size: 12px;
+    }
+
+    .country {
+        font-size: 12px;
+    }
+
+    .temp {
+        font-size: 22px;
+    }
+
+    .humidity {
+        font-size: 8px;
+    }
+
+    .wind {
+        font-size: 8px;
+    }
+
+    .description {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 305px) {
+    .navbar {
+        font-size: 6px;
+    }
+
+    #search_bar {
+        max-width: 56%;
+        padding: 8px 10px;
+        font-size: 8px;
+    }
+
+    .search button {
+        border: 1px solid transparent;
+        border-radius: 50%;
+        margin-left: 0px;
+    }
+
+    .search button i {
+        width: 37px;
+        height: 37px;
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 282px) {
+    .navbar {
+        text-align: center;
+        font-size: 6px;
+    }
+
+    .temp {
+        font-size: 17px;
+    }
 }

@@ -17,25 +17,29 @@
         <header>
             <div class="navbar">
                 <h2>WEATHER APP</h2>
-                <!-- <a href=""><i class="fa-solid fa-umbrella"></i></a> -->
                 <img src="./assets/images/sun.png" alt="logo">
             </div>
         </header>
         <div class="card">
-            <div class="search">
-                <input type="text" name="" id="search_bar" placeholder="Search City">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+            <form class="search_form">
+                <div class="search">
+                    <input type="text" name="" id="search_bar" placeholder="Search City">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <!-- <input type="submit" name="" id=""> -->
+                </div>
+            </form>
+
             <div class="weather_part">
                 <div class="weather">
                     <h2 class="city">Weather in</h2>
-                    <div class="temp">20°C</div>
+                    <h2 class="country"></h2>
+                    <div class="temp">°C</div>
                     <div class="humidity">Humidity: </div>
                     <div class="wind">Wind: </div>
                 </div>
                 <div class="right_view">
-                    <div class="view">icon</div>
-                    <div class="description">Cloudy</div>
+                    <img src="" alt="" class="icon">
+                    <div class="description">Description</div>
                 </div>
             </div>
         </div>

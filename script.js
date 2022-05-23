@@ -12,25 +12,26 @@ let weather = {
     },
     displayWeather: function (data) {
         const { name } = data;
+        const { country } = data.sys;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
         console.log(name, icon, description, temp, humidity, speed);
-        document.querySelector(".city").innerText = "Weather in" + " " + name;// innerText or innerHTML
-        //    document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png"// icon-ի խնդիր
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
-        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
+        document.querySelector(".city").innerHTML = name + "," + " " + country;// innerText or innerHTML
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png"// icon-ի խնդիր
+        document.querySelector(".description").innerHTML = description;
+        document.querySelector(".temp").innerHTML = temp + "°C";
+        document.querySelector(".humidity").innerHTML = "Humidity: " + humidity + "%";
+        document.querySelector(".wind").innerHTML = "Wind speed: " + speed + "km/h";
     },
     search: function () {
-        this.fetchWeather(document.querySelector(".search_bar").value);
+        this.fetchWeather(document.querySelector("#search_bar").value);
     }
 };
 
-document.querySelector(".search button").addEventListener('click', function () {
-    weather.search();
-});
+// document.querySelector("#search button").addEventListener('click', function () {
+//     weather.search();
+// });
 
 
 // doesn't work 
@@ -53,10 +54,18 @@ tempElement.addEventListener('click', function () {
     }
 })
 
-document.querySelector(".search_bar").addEventListener("keyup", function (event) {
+let search_btn = document.querySelector("div.search > button")
+
+search_btn.onclick = (e) => {
+    e.preventDefault()
+    weather.search()
+};
+document.querySelector("#search_bar").addEventListener("keyup", function (event) {
+    console.log(event.key)
     if (event.key == "Enter") {
-        weather.search();
+        event.preventDefault()
+
+        search_btn.click();
+
     }
 })
-
-weather.fetchWeather("London");
