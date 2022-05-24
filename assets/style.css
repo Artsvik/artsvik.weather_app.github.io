@@ -25,7 +25,7 @@
 /* PROBLEM with HEIGHT*/
 .container {
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-image: url(../assets/images/back.png);
     margin: 0;
     font-family: fredoko;
